@@ -14,7 +14,7 @@ public class WarehouseTest {
 
     @BeforeEach
     public void setUp() {
-        warehouse = new Warehouse();
+        warehouse = new Warehouse(); // Ensure warehouse is initialized here
     }
 
     @Test
@@ -23,18 +23,6 @@ public class WarehouseTest {
         warehouse.addProduct(product);
         assertEquals(1, warehouse.getAllProducts().size());
     }
-
-//Test för att se om det går att lägga till en produkt med null värde.
-    /*
-    @Test
-    public void testAddProductWithNull() {
-        Warehouse warehouse = new Warehouse();
-        Product nullNameProduct = new Product("2", null, Category.FOOD, 7, LocalDate.now(), LocalDate.now());
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () -> {
-            warehouse.addProduct(nullNameProduct);
-        });
-        assertEquals("Fields cannot be null" , thrown.getMessage());
-    }*/
 
     @Test
     public void testUpdateProduct() {
