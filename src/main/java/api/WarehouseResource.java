@@ -70,7 +70,7 @@ public class WarehouseResource {
     public Response getProductsByCategory(@PathParam("categoryName") String categoryName) {
         logger.info("Fetching products by category: {}", categoryName);
         try {
-            Category category = Category.fromString(categoryName); // Assume you implement this method
+            Category category = Category.fromString(categoryName);
             List<Product> products = warehouse.getProductsByCategory(category);
             logger.info("Fetched {} products in category {}", products.size(), categoryName);
             return Response.ok(products).build();
